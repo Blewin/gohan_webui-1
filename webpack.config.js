@@ -41,13 +41,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
+        //exclude: /node_modules/,
         loader: ExtractTextPlugin.extract({
           loader: [
             {
               loader: 'css-loader',
               query: {
-                sourceMap: true
+                sourceMap: true,
+                modules: true
               }
             }
           ]

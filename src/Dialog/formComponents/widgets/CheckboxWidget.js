@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 function CheckboxWidget({
   schema,  // eslint-disable-line
@@ -11,8 +12,9 @@ function CheckboxWidget({
   onChange,
 }) {
   return (
-    <label className={'pt-control gohan-form-checkbox pt-checkbox'}>
+    <label className={`${bootstrap['form-check-label']} gohan-form-checkbox`} htmlFor={id}>
       <input type='checkbox'
+        className={bootstrap['form-check-input']}
         id={id}
         checked={typeof value === 'undefined' ? false : value}
         required={required}

@@ -91,6 +91,9 @@ export class GeneratedDialog extends Component {
 
             return (
               <div>
+                <div className="required-description">
+                  <span className="gohan-form-asterisk">*</span> Indicates required field
+                </div>
                 <Form ref={c => {this.form = c;}} schema={this.props.schema}
                   fields={fields} widgets={widgets}
                   FieldTemplate={Template} formData={
@@ -106,8 +109,9 @@ export class GeneratedDialog extends Component {
                     ...this.props.jsonUiSchema,
                     ...this.props.uiSchema
                   }}
-                  onSubmit={this.handleSubmit} showErrorList={false}
-                  noValidate={true}>
+                  onSubmit={this.handleSubmit}
+                  showErrorList={true}
+                  liveValidate={true}>
                   <div/>
                 </Form>
               </div>
